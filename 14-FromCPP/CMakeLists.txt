@@ -1,0 +1,11 @@
+
+
+
+ADD_EXECUTABLE(from_cpp FromCPP.cpp)
+
+TARGET_LINK_LIBRARIES(from_cpp ${Boost_LIBRARIES} ${PYTHON_LIBRARIES})
+
+SET( ENV{PYTHONPATH} . )
+
+ADD_TEST(14-FromCPP from_cpp)
+

@@ -1,4 +1,8 @@
-cmake_minimum_required(VERSION 2.8.3)
+#cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.1)
+
+#set(CMAKE_CXX_STANDARD 11)
+
 FIND_PACKAGE(PythonInterp)
 FIND_PACKAGE(PythonLibs)
 FIND_PACKAGE(Boost COMPONENTS python)
@@ -20,4 +24,14 @@ ADD_SUBDIRECTORY(10-Embedding)
 ADD_SUBDIRECTORY(11-Iterators)
 ADD_SUBDIRECTORY(12-Exceptions)
 ADD_SUBDIRECTORY(13-AutoInstantiation)
+
+if("${CMAKE_CXX_STANDARD}" EQUAL 11)
+  ADD_SUBDIRECTORY(14-FromCPP)
+endif()
+
+ADD_SUBDIRECTORY(15-FromCPPCallingPy)
+ADD_SUBDIRECTORY(16-CToPy)
+ADD_SUBDIRECTORY(17-PropWrap)
+ADD_SUBDIRECTORY(18-Poly)
+ADD_SUBDIRECTORY(19-Property)
 
